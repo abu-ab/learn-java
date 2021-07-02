@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_ioc_anno" />
+      </profile>
+      <profile name="Annotation profile for spring_aop" enabled="true">
+        <sourceOutputDir name="../spring_aop/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../spring_aop/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_ioc" />
+        <module name="spring_aop" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="spring_aop" target="11" />
+      <module name="spring_ioc" target="11" />
+      <module name="spring_ioc_anno" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
