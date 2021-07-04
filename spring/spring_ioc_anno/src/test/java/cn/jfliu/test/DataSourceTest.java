@@ -1,17 +1,30 @@
 package cn.jfliu.test;
 
+import cn.jfliu.config.SpringCofiguration;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class DataSourceTest {
+
+    @Test
+    public void Test5() throws SQLException {
+        ApplicationContext app = new AnnotationConfigApplicationContext(SpringCofiguration.class);
+        DataSource dataSource = (DataSource) app.getBean("dataSource");
+        Connection connection = dataSource.getConnection();
+        System.out.println(connection);
+        connection.close();
+
+    }
 
     @Test
     // 测试spring容器源产生对象
